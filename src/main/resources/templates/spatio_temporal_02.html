@@ -23,25 +23,43 @@
 <div class="layui-row">
     <blockquote class="layui-elem-quote" style="margin-top: 20px;margin-left: 5%;margin-right: 5%">时空数据分析</blockquote>
     <div class="layui-row layui-field-box" style="margin-left: 5%;margin-right: 5%">
-        <div class="layui-col-md3" style="width: 19%">
-            <a th:href="@{/to_network}" class="layui-btn layui-btn-primary" style="height: 100px;margin-top: 5px;" onclick="window.open(this.href);return false">
+        <div class="layui-col-md3" style="width: 20%">
+            <a th:href="@{/to_network}" class="layui-btn layui-btn-primary" style="width: 205px;height: 100px;margin-top: 5px;" onclick="window.open(this.href);return false">
                 <div style="text-align: left;font-weight:bold;font-size: 15px;margin-top: 5px;">网络流量异常检测</div>
                 <div style="text-align: left;font-size: 12px;color: #A0A0A0;height: 14px;">可以针对原始流量进行</div>
                 <div style="text-align: left;font-size: 12px;color: #A0A0A0;">特征预处理和网络流量异常检测</div>
             </a>
         </div>
         <div class="layui-col-md3" style="width: 20%">
-            <a th:href="@{/to_data_fill}" class="layui-btn layui-btn-primary" style="height: 100px;margin-top: 5px;" onclick="window.open(this.href);return false">
+            <a th:href="@{/to_data_fill}" class="layui-btn layui-btn-primary" style="width: 205px;height: 100px;margin-top: 5px;" onclick="window.open(this.href);return false">
                 <div style="text-align: left;font-weight:bold;font-size: 15px;margin-top: 5px;">多视角数据缺失填补</div>
                 <div style="text-align: left;font-size: 12px;color: #A0A0A0">可以填补单/多视角缺失数据&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
             </a>
         </div>
         <div class="layui-col-md3" style="width: 20%">
-            <a th:href="@{/to_risk_quality}" class="layui-btn layui-btn-primary" style="height: 100px;margin-top: 5px;" onclick="window.open(this.href);return false">
+            <a th:href="@{/to_risk_quality}" class="layui-btn layui-btn-primary" style="width: 205px;height: 100px;margin-top: 5px;" onclick="window.open(this.href);return false">
                 <div style="text-align: left;font-weight:bold;font-size: 15px;margin-top: 5px;">信贷风险评估系统</div>
                 <div style="text-align: left;font-size: 12px;color: #A0A0A0">机器学习方法智能化信贷风险评估&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
             </a>
         </div>
+    </div>
+    <div class="layui-row" style="margin-left: 10%;margin-right: 5%">
+        <div class="layui-col-md3" style="width: 20%">
+            <a href="https://github.com/ColeGroup/2023SunJun" target="_blank">
+                <img th:src="@{/img/sourcecode.jpg}" alt="SourceCode" style="width: 98px; height: 31px;" />
+            </a>
+        </div>
+        <div class="layui-col-md3" style="width: 21%">
+            <a href="https://github.com/ColeGroup/2023CaoJun" target="_blank">
+                <img th:src="@{/img/sourcecode.jpg}" alt="SourceCode" style="width: 98px; height: 31px;" />
+            </a>
+        </div>
+        <div class="layui-col-md3" style="width: 20%">
+            <a href="https://github.com/ColeGroup/2023ZhaiBin" target="_blank">
+                <img th:src="@{/img/sourcecode.jpg}" alt="SourceCode" style="width: 98px; height: 31px;" />
+            </a>
+        </div>
+
     </div>
 
 
