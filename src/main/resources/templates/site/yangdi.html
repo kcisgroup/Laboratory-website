@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" th:href="@{/fac.ico}"/>
+    <link rel="bookmark" th:href="@{/fac.ico}"/>
+    <title>基于数字孪生的伪装效果评估系统</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" th:href="@{/css/layui.css}"  media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <style>
+        p {text-indent:1em;}
+    </style>
+</head>
+<body>
+
+<div class="layui-row" th:replace="index::index">
+    <!--    <ul class="layui-nav">-->
+    <!--        <li class="layui-nav-item"><a href="/index">首页</a></li>-->
+    <!--        <li class="layui-nav-item"><a href="/to_model">模型</a></li>-->
+    <!--        <li class="layui-nav-item">-->
+    <!--            <a>功能示例</a>-->
+    <!--            <dl class="layui-nav-child"> &lt;!&ndash; 二级菜单 &ndash;&gt;-->
+    <!--                <dd><a href="/to_correction">中文纠错</a></dd>-->
+    <!--                <dd><a href="/to_consistency">句子连贯性检查</a></dd>-->
+    <!--                <dd><a href="/to_match">搭配检错</a></dd>-->
+    <!--                <dd><a href="/to_recommend">搭配推荐</a></dd>-->
+    <!--            </dl>-->
+    <!--        </li>-->
+    <!--    </ul>-->
+</div>
+
+
+<!--<fieldset class="layui-elem-field layui-field-title " style="margin-top: 20px;">-->
+<!--    <legend>中文纠错</legend>-->
+<!--</fieldset>-->
+<div class="layui-tab layui-tab-brief" style="margin-right: 5%;margin-left: 5%;margin-bottom: 0">
+    <div class="layui-tab layui-tab-brief ">
+        <ul class="layui-tab-title layui-row layui-col-xs8 layui-col-xs-offset2">
+            <li class="layui-this">基于数字孪生的伪装效果评估系统</li>
+        </ul>
+    </div>
+    <div class="layui-tab-content" style="padding-top: 0">
+        <div class="layui-tab-item layui-show">
+            <div class="layui-row">
+                <div class="layui-row layui-col-xs8 layui-col-xs-offset2"
+                     style="margin-top: 20px;">
+                    <div class="layui-row">
+<!--                        <blockquote class="layui-elem-quote" style="margin-left: 15px;">
+                            系统框架
+                        </blockquote>-->
+                        <div style="margin-left: 20px;">
+                            <p>提出了一种基于战场环境孪生的迷彩伪装动态效果评估新方法。
+                                新方法以构建三维战场环境数字孪生模型为基础，借助三维仿真计算技术获取战场环境中迷彩伪装目标的动态多视角效果图，
+                                采用语义分割模型和目标跟踪模型识别分析场景中的迷彩运动目标；
+                                构建了新的迷彩伪装评价指标体系及多侦察视角的多属性综合评估模型，
+                                实现了不同迷彩方案在给定孪生战场环境中的伪装动态效果评价。
+                                实验以仿真军用卡车模型为实验对象，使用Unity 3D建模真实战场环境，
+                                以两种对比性迷彩伪装设计方案为例进行了评估分析，实验结果表明了新方法的合理性和实用性。</p>
+                        </div>
+                    </div>
+                    <div class="layui-row" style="margin-top: 40px">
+                        <img style="max-height: 100%;max-width: 100%;width: auto;height: auto;display: table-cell;text-align: center;margin-left: 20px;" th:src="@{/yangdi/01.png}"/>
+                        <p style="margin-top: 10px;text-align: center;">三维虚拟战场环境及数据集构建方法</p>
+                    </div>
+                    <div class="layui-row" style="margin-top: 40px">
+                        <img style="max-height: 100%;max-width: 100%;width: auto;height: auto;display: table-cell;text-align: center;margin-left: 20px;" th:src="@{/yangdi/02.png}"/>
+                        <p style="margin-top: 10px;text-align: center;">方法的技术框架</p>
+                    </div>
+
+                    <div class="layui-row">
+                        <div style="margin-left: 20px;margin-top: 30px;">
+                            <p>分为三个模块：</p>
+                            <p>1) 战场环境孪生模块，该模块基于现实战场信息利用三维建模技术孪生出虚拟数字战场环境与军事装备，
+                                并利用构建的虚拟战场环境获取训练与评估所需的数据集。</p>
+                            <p>2) 运动目标识别模块，该模块分为目标跟踪模型与语义分割模型两部分，
+                                其作用是测试迷彩设计前后目标对象的伪装动态效果与目标在军事侦察系统下隐蔽的能力。</p>
+                            <p>3) 多属性迷彩伪装评估模块，模块内包含动态伪装评价指标体系与综合伪装性能评估模型，其作用是从多个评估方面计算出迷彩伪装方案的属性值，
+                                并根据多属性权重确定方法对评估属性进行权重分配，最终综合评估迷彩伪装方案对方案进行决排序与决策。</p>
+                        </div>
+                    </div>
+
+                    <div class="layui-row" style="margin-top: 40px">
+                        <img style="max-height: 100%;max-width: 100%;width: auto;height: auto;display: table-cell;text-align: center;margin-left: 20px;" th:src="@{/yangdi/03.png}"/>
+                        <p style="margin-top: 10px;text-align: center;">评估数据集构建视角</p>
+                    </div>
+
+                    <div class="layui-row" style="margin-top: 40px">
+                        <p style="margin-top: 10px;text-align: center;">基本迷彩图样与迷彩目标</p>
+                        <img style="max-height: 100%;max-width: 100%;width: auto;height: auto;display: table-cell;text-align: center;margin-left: 20px;" th:src="@{/yangdi/04.png}"/>
+                    </div>
+
+                    <div class="layui-row">
+                        <div style="margin-left: 20px;margin-top: 30px;">
+                            <p>得出的结论如下：</p>
+                            <p>（1）实验中获取评估数据过程表明，在方法的三维场景构建模块中利用三维建模技术可以克服现实世界中获取评估数据的限制，缩短并简化了获取评估数据的过程，
+                                大幅减少获取评估数据的成本，并且搭建的虚拟战场环境效果逼真，
+                                能够满足实验的真实性与客观性需要。</p>
+                            <p>（2）方法中提出以运动目标识别模块作为军事侦察系统，并模拟真实战场中敌方军事侦察系统的巡查过程，通过建立新的伪装动态评价指标体系，
+                                可以多层面评估迷彩伪装方案的动态、隐蔽伪装性能，使评估结果更加贴合真实战场。</p>
+                            <p>（3）提出的迷彩伪装效果综合评估模块可以从不同侦察视角，三维、动态地对迷彩方案伪装性能进行综合性考量，通过多属性权重确定方法合理分配评估属性权重，
+                                根据正负理想点相似度对方案进行排序，减少了评估过程中主观因素的干扰，
+                                使评估结果更真实、客观。</p>
+                        </div>
+                    </div>
+
+                    <div class="layui-row">
+                        <div style="margin-left: 20px;margin-top: 30px;">
+                            <p>在构建评估方法的过程中发现，与背景环境颜色越相似的数码迷彩伪装策略在经过自然遮蔽物时，被运动目标识别模块识别出的精准率越低，伪装目标被识别分类为自然遮蔽物的概率越大。基于此发现，在第二阶段工作中构建了一种适应性数码迷彩伪装策略生成新方法。该方法以构建三维战场环境孪生模型为基础，以在孪生环境模型中获取的战场环境信息作为设计依据，设计生成适应性数码迷彩伪装策略。
+                                该方法将获取的环境信息进行图像增强与图像还原处理，并借助聚类算法与视觉成像原理，基于环境信息生成适应性数码迷彩图案；
+                                并利用环境中的自然遮蔽物对目标对象进行伪装装饰，以生成更贴合现实战场环境、伪装成功率更高的迷彩伪装设计策略。
+                                应用第一阶段研究构建的评估方法对伪装策略进行综合评估，
+                                实验结果表明，本文提出的迷彩伪装策略对现代军事侦察系统有较强的干扰性、对抗性，
+                                能够为目标对象提供在现实战争中保持高伪装性能的迷彩伪装方案，
+                                具有较强的现实价值和战略意义。</p>
+                        </div>
+                    </div>
+
+                    <div class="layui-row" style="margin-top: 40px">
+                        <img style="max-height: 100%;max-width: 100%;width: auto;height: auto;display: table-cell;text-align: center;margin-left: 20px;" th:src="@{/yangdi/05.png}"/>
+                        <p style="margin-top: 10px;text-align: center;">伪装策略生成方法框架图</p>
+                    </div>
+
+                    <div class="layui-row" style="margin-top: 40px">
+                        <img style="max-height: 100%;max-width: 100%;width: auto;height: auto;display: table-cell;text-align: center;margin-left: 20px;" th:src="@{/yangdi/06.png}"/>
+                        <p style="margin-top: 10px;text-align: center;">三维目标装备建模过程</p>
+                    </div>
+
+                    <div class="layui-row" style="margin-top: 40px">
+                        <img style="max-height: 100%;max-width: 100%;width: auto;height: auto;display: table-cell;text-align: center;margin-left: 20px;" th:src="@{/yangdi/07.png}"/>
+                        <p style="margin-top: 10px;text-align: center;">三维战场环境模型构建过程</p>
+                    </div>
+
+                    <div class="layui-row" style="margin-top: 40px">
+                        <img style="max-height: 100%;max-width: 100%;width: auto;height: auto;display: table-cell;text-align: center;margin-left: 20px;" th:src="@{/yangdi/07.png}"/>
+                        <p style="margin-top: 10px;text-align: center;">迷彩伪装策略生成过程</p>
+                    </div>
+
+                    <div class="layui-row">
+                        <div style="margin-left: 20px;margin-top: 30px;">
+                            <p>所得主要结论如下：</p>
+                            <p>（1）构建的新方法可以依靠数字孪生模型，为生成伪装策略提供更多、更可靠的信息支撑。根据构建的三维动态战场环境模型可以打破获取背景信息时的时空限制、成本限制、场景限制等限制因素，
+                                为获取设计数据提供了一种新思路。</p>
+                            <p>（2）根据实验验证，所提出的适应性数码迷彩图案生成策略相较于传统的数码迷彩图案具有更强的适应性与对抗性，
+                                在三维动态战场环境中面对智能侦察系统具有更强的隐蔽性。</p>
+                            <p>（3）所提出的自然遮蔽物装饰方法可以使伪装策略具有更强的伪装对抗性，
+                                可以突破目标对象自身特征，使侦察系统更难以识别。</p>
+                        </div>
+                    </div>
+
+                    <div class="layui-row" style="margin-top: 30px">
+                        <blockquote class="layui-elem-quote" style="margin-left: 20px;">
+                            已发表论文
+                        </blockquote>
+                        <div style="margin-left: 20px;">
+                            <p style="margin-top: 10px">
+                                [1]杨迪,周颖,谢振平.基于战场环境孪生的迷彩伪装动态效果评估方法[J/OL].兵工学报:1-14[2023-06-17].
+                            </p>
+                            <p style="margin-left: 18px;">http://kns.cnki.net/kcms/detail/11.2176.tj.20220725.1836.007.html. </p>
+                            <p style="margin-top: 10px">
+                                [2]周颖,谢振平,蒋晓军.基于演化计算的迷彩目标隐蔽策略仿真设计[J].兵工学报,2021,42(09):1987-1997.
+                            </p>
+                            <p style="margin-top: 10px">
+                                [3]卓刘,陈晓琪,谢振平等.基于深度神经网络的迷彩目标发现仿真学习方法[J].激光与光电子学进展,2019,56(07):162-168.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="layui-row" th:fragment="tail">
+    <fieldset class="layui-elem-field layui-field-title " style="margin-top: 20px;">
+    </fieldset>
+
+    <div style="width:300px;margin:0 auto; padding:20px 0;">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32060102320737" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img th:src="@{/img/123.png}" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">苏公网安备 32060102320737号</p></a>
+    </div>
+</div>
+
+
+<script th:src="@{/layui.js}" charset="utf-8"></script>
+
+</body>
+</html>

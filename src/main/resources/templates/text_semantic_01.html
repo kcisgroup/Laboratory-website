@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" th:href="@{/fac.ico}"/>
+    <link rel="bookmark" th:href="@{/fac.ico}"/>
+    <title>拾伍志</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" th:href="@{/css/layui.css}"  media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <style>
+        p {text-indent:1em;}
+    </style>
+</head>
+<body>
+
+<div class="layui-row" th:replace="index::index">
+
+</div>
+
+<div class="layui-row">
+    <blockquote class="layui-elem-quote" style="margin-top: 20px;margin-left: 5%;margin-right: 5%">智能校对</blockquote>
+        <div class="layui-row layui-field-box" style="margin-left: 5%;margin-right: 5%">
+            <!--调整宽度style="width: 15%"-->
+            <div class="layui-col-md3" style="width: 19%">
+                <a th:href="@{/to_correction}" class="layui-btn layui-btn-primary" style="height: 100px;margin-top: 5px;">
+                    <div style="text-align: left;font-weight:bold;font-size: 15px;margin-top: 5px;">中文纠错</div>
+                    <div style="text-align: left;font-size: 12px;color: #A0A0A0">可以实现对任意短句进行拼写纠错</div>
+                </a>
+            </div>
+            <div class="layui-col-md3" style="width: 20%">
+                <a th:href="@{/to_consistency}" class="layui-btn layui-btn-primary" style="height: 100px;margin-top: 5px;">
+                    <div style="text-align: left;font-weight:bold;font-size: 15px;margin-top: 5px;">句子连贯性检查</div>
+                    <div style="text-align: left;font-size: 12px;color: #A0A0A0">可以判断用逗号分割的句子是否连贯</div>
+                </a>
+            </div>
+            <div class="layui-col-md3" style="width: 21%">
+                <a th:href="@{/to_match}" class="layui-btn layui-btn-primary" style="height: 100px;margin-top: 5px;">
+                    <div style="text-align: left;font-weight:bold;font-size: 15px;margin-top: 5px;">搭配检错</div>
+                    <div style="text-align: left;font-size: 12px;color: #A0A0A0">判断输入句子中是否有搭配错误的词语</div>
+                </a>
+            </div>
+            <div class="layui-col-md3" style="width: 21%">
+                <a th:href="@{/to_recommend}" class="layui-btn layui-btn-primary" style="height: 100px;margin-top: 5px;">
+                    <div style="text-align: left;font-weight:bold;font-size: 15px;margin-top: 5px;">搭配推荐</div>
+                    <div style="text-align: left;font-size: 12px;color: #A0A0A0">可以根据输入句子和词语给出推荐搭配</div>
+                </a>
+            </div>
+        </div>
+    <blockquote class="layui-elem-quote" style="margin-top: 20px;margin-left: 5%;margin-right: 5%">软件测试</blockquote>
+    <div class="layui-row layui-field-box" style="margin-left: 5%;margin-right: 5%">
+        <div class="layui-row layui-col-md2">
+            <a th:href="@{/to_enhance_quality}" class="layui-btn layui-btn-primary" style="height: 100px;margin-top: 5px;width: 220px" onclick="window.open(this.href);return false">
+                <div style="text-align: left;font-weight:bold;font-size: 15px;margin-top: 5px;">数据集增强质量评价</div>
+                <div style="text-align: left;font-size: 12px;color: #A0A0A0">可以对增强数据集进行质量评价</div>
+            </a>
+        </div>
+        <div class="layui-row layui-col-md2">
+            <a href="https://github.com/ColeGroup/2023SongCheng" target="_blank">Source Code</a>
+        </div>
+
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+<div class="layui-row" th:fragment="tail" style="position: fixed;bottom: 0; width: 100%">
+    <fieldset class="layui-elem-field layui-field-title " style="margin-top: 20px;">
+    </fieldset>
+
+    <div style="width:300px;margin:0 auto; padding:20px 0;text-align: center">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32060102320737" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img th:src="@{/img/123.png}" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">苏公网安备 32060102320737号</p></a>
+    </div>
+</div>
+
+
+<script th:src="@{/layui.js}" charset="utf-8"></script>
+
+
+</body>
+</html>
