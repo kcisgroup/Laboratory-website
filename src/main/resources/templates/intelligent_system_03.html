@@ -9,17 +9,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" th:href="@{/css/layui.css}"  media="all">
+    <link
+            rel="stylesheet"
+            href="//cdn.jsdelivr.net/npm/element-plus/dist/index.css"
+    />
+    <!-- Import Vue 3 -->
+    <script src="//cdn.jsdelivr.net/npm/vue@3"></script>
+    <!-- Import component library -->
+    <script src="//cdn.jsdelivr.net/npm/element-plus"></script>
     <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
     <style>
-        p {text-indent:1em;}
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+
     </style>
 </head>
 <body>
-
-<div class="layui-row" th:replace="index::index">
-
-</div>
-
+<div class="layui-row" th:replace="index::index"></div>
 <div class="layui-row">
     <blockquote class="layui-elem-quote" style="margin-top: 20px;margin-left: 5%;margin-right: 5%">协同智能系统</blockquote>
     <div class="layui-row layui-field-box" style="margin-left: 5%;margin-right: 5%">
@@ -30,18 +40,10 @@
             </a>
         </div>
     </div>
-
-
-
-
-
-
 </div>
 
 
-
-
-<div class="layui-row" th:fragment="tail" style="position: fixed;bottom: 0; width: 100%">
+<div class="layui-row" th:fragment="tail" style="width: 100%;position: fixed;bottom: 0;">
     <fieldset class="layui-elem-field layui-field-title " style="margin-top: 20px;">
     </fieldset>
 
