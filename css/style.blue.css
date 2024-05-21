@@ -43,7 +43,7 @@ section {
   color: #fff;
   font-size: 0.8rem;
   position: absolute;
-  bottom: 3rem;
+  bottom: 5rem;
   left: calc(50% - 1.25rem);
   -webkit-animation: float 2s linear infinite;
   animation: float 2s linear infinite;
