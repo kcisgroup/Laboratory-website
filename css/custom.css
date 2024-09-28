@@ -1,1 +1,8 @@
 /* your styles go here */
+.fixed-counter {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: auto;
+    height: auto;
+}
