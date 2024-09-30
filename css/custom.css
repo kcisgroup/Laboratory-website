@@ -2,7 +2,7 @@
 .fixed-counter {
     position: absolute;
     bottom: 0;
-    right: 20px;
+    right: 0;
     width: auto;
     height: auto;
 }
