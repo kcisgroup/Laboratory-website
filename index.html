@@ -30,6 +30,11 @@
         <a href="/blog" target="_blank"><button class="btn btn-primary">研究组动态</button></a>
       </div>
     </header>
+    <div class="popup" id="welcomePopup">
+      <p>热烈欢迎新同学加入 <strong>知识计算与智能软件研究组</strong>！</p>
+      👏👏👏（手动鼓掌）
+      <button onclick="closePopup()">关闭</button>
+    </div>
     <div class="main">
       <section class="bg-cover bg-center hero">
         <div id="title" class="position-relative z-index-1" style="opacity: 0.0; margin-right: 20px; margin-bottom: 20px">
@@ -196,6 +201,9 @@
           top: '20px'
         }, 1500);
       });
+      function closePopup() {
+        document.getElementById("welcomePopup").style.display = "none";
+      }
     </script>
     <script src="vendor/onepage-scroll/jquery.onepage-scroll.min.js"></script>
     <script src="vendor/lightbox2/js/lightbox.min.js"></script>
