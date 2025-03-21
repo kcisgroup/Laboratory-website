@@ -6,3 +6,35 @@
     width: auto;
     height: auto;
 }
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1000;
+    animation: snakeScroll 30s linear infinite;
+}
+
+.popup button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@keyframes snakeScroll {
+    0% { top: -100px; left: 20%; }
+    25% { top: 25vh; left: 80%; }
+    50% { top: 50vh; left: 20%; }
+    75% { top: 75vh; left: 80%; }
+    100% { top: 100vh; left: 50%; }
+}
