@@ -7,34 +7,26 @@
     height: auto;
 }
 
+/* easter_eggs */
 .popup {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    z-index: 1000;
-    animation: snakeScroll 30s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: -100%; /* Start off-screen to the left */
+    transform: translateY(-50%);
+    white-space: nowrap; /* Prevent line breaks */
+    animation: slideIn 20s linear infinite; /* Adjust duration to slow down */
+    z-index: 9999; /* Ensure popups are on top */
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background color */
+    color: white; /* Optional: Set text color for better readability */
+    padding: 10px; /* Optional: Add some padding */
+    border-radius: 5px; /* Optional: Add rounded corners */
 }
 
-.popup button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    border: none;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-@keyframes snakeScroll {
-    0% { top: -100px; left: 20%; }
-    25% { top: 25vh; left: 80%; }
-    50% { top: 50vh; left: 20%; }
-    75% { top: 75vh; left: 80%; }
-    100% { top: 100vh; left: 50%; }
+@keyframes slideIn {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
 }
