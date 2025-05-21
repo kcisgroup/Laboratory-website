@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         usedPositions.push(randomY);
         popup.style.top = `${randomY}px`; // Randomize Y position with spacing
         popup.style.left = '-100%'; // Start off-screen to the left
-        popup.style.animation = `slideIn 20s linear ${index * 2}s infinite`; // Adjust duration and add delay
+        popup.style.animation = `slideIn 30s linear ${index * 2}s infinite`; // Adjust duration and add delay
     });
 
     const closeButtons = document.querySelectorAll('.closePopup');
