@@ -7,10 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let usedPositions = [];
 
     popups.forEach((popup, index) => {
-        let randomY;
+        let randomY, tryCount = 0;
         do {
             randomY = minYPosition + Math.random() * (screenHeight - popup.offsetHeight - minYPosition);
-        } while (usedPositions.some(pos => Math.abs(pos - randomY) < minSpacing));
+            tryCount++;
+        } while (usedPositions.some(pos => Math.abs(pos - randomY) < minSpacing) && tryCount < 100);
 
         usedPositions.push(randomY);
         popup.style.top = `${randomY}px`; // Randomize Y position with spacing
