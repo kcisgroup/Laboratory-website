@@ -7,6 +7,17 @@
     height: auto;
 }
 
+.scroll-btn::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white; /* Arrow color */
+    margin-top: 5px; /* Optional: Adjust the position */
+}
+
 /* easter_eggs */
 .popup {
     position: absolute;
