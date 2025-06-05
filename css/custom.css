@@ -41,3 +41,13 @@
         left: 100%;
     }
 }
+
+@media (orientation: portrait) {
+    .hero-bg-video { display: none !important; }
+    .hero-bg-black { display: block !important; }
+}
+
+@media (orientation: landscape) {
+    .hero-bg-video { display: block !important; }
+    .hero-bg-black { display: none !important; }
+}
