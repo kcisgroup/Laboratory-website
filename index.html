@@ -36,7 +36,11 @@
       <button class="closePopup">关闭</button>
     </div>
     <div class="main">
-      <section class="bg-cover bg-center hero">
+      <section class="bg-cover bg-center hero position-relative" style="overflow: hidden;">
+        <video class="hero-bg-video" autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; z-index: 0;">
+          <source src="video/niubi.mp4" type="video/mp4">
+        </video>
+        <div class="hero-bg-black" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 1; display: none;"></div>
         <div id="title" class="position-relative z-index-1" style="opacity: 0.0; margin-right: 20px; margin-bottom: 20px">
           <div class="container text-left text-white">
             <p class="lead">Knowledge Computing & Intelligent Software Group</p>
