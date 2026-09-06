@@ -107,6 +107,8 @@ section { padding: clamp(4rem, 7vw, 7rem) 0; }
 .team-section .row { align-items: flex-start !important; row-gap: 2rem; }
 .team-section p { font-size: 1rem; line-height: 2; overflow-wrap: anywhere; }
 .team-section p u { color: var(--ink); font-weight: 650; text-decoration: none; }
+.affiliation { white-space: nowrap; }
+.affiliation-logo { display: inline-block; width: 1em; height: 1em; margin-right: .22em; object-fit: contain; border-radius: 3px; vertical-align: -.15em; }
 .team-section .img-thumbnail { border: 0; padding: 0; border-radius: 12px; box-shadow: 0 12px 30px rgba(21,40,63,.1); }
 .team-section .col-lg-3 { padding-top: 6rem; }
 .research-section .row { row-gap: 2rem; }

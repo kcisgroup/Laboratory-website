@@ -3,6 +3,46 @@ document.addEventListener('DOMContentLoaded', function () {
         window.lightbox.option({ resizeDuration: 200 });
     }
 
+    const affiliationDomains = {
+        '哔哩哔哩': 'bilibili.com',
+        '苏州农商行': 'szrcb.com',
+        '摩尔线程': 'mthreads.com',
+        '智慧芽': 'patsnap.com',
+        '科锐国际': 'careerintlinc.com',
+        '极智嘉': 'geekplus.com',
+        '米哈游': 'mihoyo.com',
+        'Monash University': 'monash.edu',
+        '江苏银行': 'jsbchina.cn',
+        '博世中国': 'bosch.com.cn',
+        '汉口银行': 'hkbchina.com',
+        '华为云计算': 'huaweicloud.com',
+        '沃太新能源': 'alphaess.com',
+        '英特尔亚太研发中心': 'intel.cn'
+    };
+    const affiliationNames = Object.keys(affiliationDomains).sort(function (first, second) {
+        return second.length - first.length;
+    });
+    document.querySelectorAll('#team small').forEach(function (detail) {
+        const match = affiliationNames.find(function (name) { return detail.textContent.includes(name); });
+        if (!match) return;
+
+        const text = detail.textContent;
+        const before = text.slice(0, text.indexOf(match));
+        const after = text.slice(text.indexOf(match) + match.length);
+        const affiliation = document.createElement('span');
+        const logo = document.createElement('img');
+        affiliation.className = 'affiliation';
+        logo.className = 'affiliation-logo';
+        logo.src = 'img/affiliations/' + affiliationDomains[match] + '.ico';
+        logo.alt = '';
+        logo.width = 18;
+        logo.height = 18;
+        logo.loading = 'lazy';
+        logo.addEventListener('error', function () { logo.hidden = true; });
+        affiliation.append(logo, match);
+        detail.replaceChildren(before, affiliation, after);
+    });
+
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const video = document.querySelector('.hero-bg-video');
     if (video) {
