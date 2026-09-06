@@ -4,15 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>KC&IS Group</title>
-    <meta name="description" content="">
+    <meta name="description" content="江南大学知识计算与智能软件研究组：学术思想、研究进展、团队成员与招生联系。">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <!-- Lightbox-->
     <link rel="stylesheet" href="vendor/lightbox2/css/lightbox.min.css">
-    <!-- Parallax-->
-    <link rel="stylesheet" href="vendor/onepage-scroll/onepage-scroll.css">
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="css/style.blue.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
@@ -22,55 +20,55 @@
     <!-- Maintainer: Yuxiang Fan(2024-)-->
   </head>
   <body>
-    <header class="navbar fixed-top" style="background-color: #454d55">
-      <div class="navbar-brand" style="color: white">
-        KC&IS Group
-      </div>
-      <div class="nav-item">
-        <a href="/blog" target="_blank"><button class="btn btn-primary">研究组动态</button></a>
-        <a href="/rstopicseleAI" target="_blank"><button class="btn btn-primary ms-2">开题辅助系统</button></a>
+    <a class="skip-link" href="#philosophy">跳至主要内容</a>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-brand" href="#home" aria-label="KC&IS Group 首页">KC<span>&</span>IS <span class="brand-label">GROUP</span></a>
+        <nav class="header-actions" aria-label="研究组相关网站">
+          <a class="btn btn-secondary" href="/blog" target="_blank" rel="noopener noreferrer">研究组动态 <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-primary" href="/rstopicseleAI" target="_blank" rel="noopener noreferrer">开题辅助系统 <span aria-hidden="true">↗</span></a>
+        </nav>
       </div>
     </header>
-    <div class="popup" id="welcomePopup">
-      <p>热烈欢迎新同学加入 <strong>知识计算与智能软件研究组</strong>！</p>
-      👏👏👏（手动鼓掌）
-      <button class="closePopup">关闭</button>
-    </div>
-    <div class="main">
-      <section class="bg-cover bg-center hero position-relative" style="overflow: hidden;">
-        <video class="hero-bg-video" autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; z-index: 0;">
+    <aside class="barrage-track" id="welcomePopup" aria-label="欢迎新同学" hidden>
+      <div class="popup">
+        <span class="barrage-spark" aria-hidden="true">✦</span>
+        <p>欢迎新同学加入 <strong>知识计算与智能软件研究组！</strong> <span class="barrage-applause">👏👏👏（手动鼓掌）</span></p>
+        <button class="closePopup" type="button" aria-label="关闭欢迎弹幕">×</button>
+      </div>
+    </aside>
+    <main class="main" id="main-content" tabindex="-1">
+      <section class="hero" id="home" aria-labelledby="hero-heading">
+        <video class="hero-bg-video" autoplay loop muted playsinline preload="metadata" aria-hidden="true" tabindex="-1">
           <source src="video/niubi.mp4" type="video/mp4">
         </video>
-        <div class="hero-bg-black" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 1; display: none;"></div>
-        <div id="title" class="position-relative z-index-1" style="opacity: 0.0; margin-right: 20px; margin-bottom: 20px">
-          <div class="container text-left text-white">
-            <p class="lead">Knowledge Computing & Intelligent Software Group</p>
-            <h1 class="text-uppercase" style="font-size: 50pt">知识计算与智能软件研究组</h1>
+        <div class="hero-content" id="title">
+          <div class="hero-copy">
+            <p class="hero-eyebrow">Knowledge Computing & Intelligent Software Group</p>
+            <h1 id="hero-heading"><span>知识计算与</span><span>智能软件研究组</span></h1>
           </div>
-          <div class="container text-right">
-            <img src="img/logo.png"  alt="logo" style="padding-top: 10%; width:40%;"/>
-          </div>
+          <img class="hero-logo" src="img/logo.png" alt="研究组标志">
         </div>
-        <div class="scroll-btn link-scroll"><i class="fas fa-angle-double-down"></i></div>
+        <a class="scroll-btn" href="#philosophy"><span>探索研究组</span><span aria-hidden="true">↓</span></a>
       </section>
-      <section>
+      <section class="philosophy-section" id="philosophy" aria-labelledby="philosophy-heading" tabindex="-1">
         <div class="d-flex h-100 justify-content-center align-items-center">
-          <div class="container-fluid mx-5">
-            <div class="text-center mt-5">
-              <h2 class="lined">学术思想</h2>
+          <div class="container section-container">
+            <div class="text-center section-heading">
+              <h2 class="lined" id="philosophy-heading">学术思想</h2>
             </div>
-            <div class="row justify-content-center align-items-center">
+            <div class="row concept-grid">
               <div class="col-md-4">
-                <img src="img/concept_1.png" alt="concept_1" style="width: 90%"/>
+                <img src="img/concept_1.png" alt="学术思想图示一" loading="lazy"/>
               </div>
               <div class="col-md-4">
-                <img src="img/concept_2.png" alt="concept_2" style="width: 90%"/>
+                <img src="img/concept_2.png" alt="学术思想图示二" loading="lazy"/>
               </div>
               <div class=" col-md-4">
-                <img src="img/concept_3.png" alt="concept_3" style="width: 90%"/>
+                <img src="img/concept_3.png" alt="学术思想图示三" loading="lazy"/>
               </div>
             </div>
-            <div class="row justify-content-center mt-4">
+            <div class="row values-grid">
               <div class="col-md">
                 <h2 class="lined text-center">学术风格</h2>
                 <div class="container text-center">
@@ -87,118 +85,104 @@
           </div>
         </div>
       </section>
-      <section class="bg-gray">
+      <section class="bg-gray team-section" id="team" aria-labelledby="team-heading">
         <div class="d-flex h-100 justify-content-center align-items-center">
-          <div class="container-fluid mx-5">
+          <div class="container section-container">
             <div class="row align-items-center">
               <div class="col-lg-9 mb-lg-0">
                 <header class="text-center">
-                  <h2 class="lined">关于我们</h2>
+                  <h2 class="lined" id="team-heading">关于我们</h2>
                 </header>
-                <p><u>导师组</u>：<a href="https://ai.jiangnan.edu.cn/info/1013/1511.htm" target="_blank">谢振平<small>(教授，博导)</small></a>、<a href="https://ai.jiangnan.edu.cn/info/1081/2945.htm" target="_blank">朱航宇<small>(讲师)</small></a></p>
+                <p><u>导师组</u>：<a href="https://ai.jiangnan.edu.cn/info/1008/2057.htm" target="_blank" rel="noopener noreferrer">谢振平<small>(教授，博导)</small></a>、<a href="https://ai.jiangnan.edu.cn/info/1009/2492.htm" target="_blank" rel="noopener noreferrer">朱航宇<small>(副教授)</small></a></p>
                 <p><u>2025级</u>：叶淋潮<small>(博)</small>、杨海峰<small>(博)</small>、龚晨昊、刘雨桐、潘格非、岳瀚、张凯瑞、尹方鑫</p>
-                <p><u>2024级</u>：<a href="/blog/徐威/" target="_blank">徐威<small>(博)</small></a>、傅铖、方贺进、葛惠、葛宁、李冰冰、罗卓毅、王祥辉、喻一慧、张晗、王慧</p>
-                <p><u>2023级</u>：郭梓津、<a href="/blog/李苏亚/" target="_blank">李苏亚<small>(博)</small></a>、李响、孙思齐、张睿彦、张帅宇、杨康、王相然、蒋奕扬</p>
-                <p><u>2022级</u>：<a href="/blog/范雨祥/" target="_blank">范雨祥<small>(哔哩哔哩)</small></a>、沈银萱<small>(苏州农商行)</small>、<a href="https://weiwanggg.github.io/">王炜<small>(vivo)</small></a>、赵圣杰<small>(非全日制)</small>、张小雨、刘晓<small>(摩尔线程)</small>、黎钰<small>(中国联通软件研究院)</small>、黄理源<small>(腾娱互动)</small>、丁镛焜<small>(无锡超通智能制造)</small>、<a href="/blog/李婷婷/" target="_blank">李婷婷<small>(博)</small></a>、<a href="/blog/邵会会/" target="_blank">邵会会<small>(博)</small></a></p>
+                <p><u>2024级</u>：<a href="/blog/徐威/" target="_blank" rel="noopener noreferrer">徐威<small>(博)</small></a>、傅铖、方贺进、葛惠、葛宁、李冰冰、罗卓毅、王祥辉、喻一慧、张晗、王慧</p>
+                <p><u>2023级</u>：郭梓津、<a href="/blog/李苏亚/" target="_blank" rel="noopener noreferrer">李苏亚<small>(博)</small></a>、李响、孙思齐、张睿彦、张帅宇、杨康、王相然、蒋奕扬</p>
+                <p><u>2022级</u>：<a href="/blog/范雨祥/" target="_blank" rel="noopener noreferrer">范雨祥<small>(哔哩哔哩)</small></a>、沈银萱<small>(苏州农商行)</small>、<a href="https://weiwanggg.github.io/">王炜<small>(vivo)</small></a>、赵圣杰<small>(非全日制)</small>、张小雨、刘晓<small>(摩尔线程)</small>、黎钰<small>(中国联通软件研究院)</small>、黄理源<small>(腾娱互动)</small>、丁镛焜<small>(无锡超通智能制造)</small>、<a href="/blog/李婷婷/" target="_blank" rel="noopener noreferrer">李婷婷<small>(博)</small></a>、<a href="/blog/邵会会/" target="_blank" rel="noopener noreferrer">邵会会<small>(博)</small></a></p>
                 <p><u>2021级</u>：石恒<small>(朗新科技)</small>、石铖铖<small>(梦创双杨)</small>、陈舒雨<small>(苏州农商行)</small>、张昊<small>(中国移动云能力研究中心)</small>、时文龙<small>(河南中烟漯河厂)</small>、任元凯<small>(智慧芽)</small>、吕雯<small>(科锐国际)</small>、蔡思奇<small>(极智嘉)</small>、桑瑜<small>(博)(苏州城市学院)</small></p>
-                <p><u>2020级</u>：曹骏<small>(华润上华)</small>、翟彬<small>(米哈游)</small>、<a href="https://fanyuuwang.github.io" target="_blank">王钒宇<small>(Monash University)</small></a>、杨迪<small>(中国移动云能力研究中心)</small>、汪康<small>(追觅科技)</small>、孙俊<small>(江苏银行)</small></p>
+                <p><u>2020级</u>：曹骏<small>(华润上华)</small>、翟彬<small>(米哈游)</small>、<a href="https://fanyuuwang.github.io" target="_blank" rel="noopener noreferrer">王钒宇<small>(Monash University)</small></a>、杨迪<small>(中国移动云能力研究中心)</small>、汪康<small>(追觅科技)</small>、孙俊<small>(江苏银行)</small></p>
                 <p><u>2019级</u>：李玉林<small>(博世中国)</small>、莫鸿飞<small>(度小满)</small>、覃翔宇<small>(信通院)</small>、张硕<small>(南瑞集团)</small>、周颖<small>(汉口银行)</small>、朱宗政<small>(远景)</small></p>
                 <p><u>2018级</u>：黄兆欣<small>(临沂市中心医院)</small>、张晶维<small>(尚链技术)</small>、周海<small>(扬州卫健委)</small>；<u>2017级</u>：陈梅婕<small>(华为云计算)</small>、马冬雪<small>(中国重汽)</small>、陈晓琪<small>(无锡先研院)</small>；<u>2016级</u>：任斌斌<small>(中国联通苏州分公司)</small>、王坤<small>(中国重汽)</small>、卓刘<small>(安徽经济信息中心)</small>；<u>2015级</u>：江思伟<small>(沃太新能源)</small>、任立园<small>(中国联通上海分公司)</small>；<u>2014级</u>：金晨<small>(中国电信金华分公司)</small>；<u>2013级</u>：孙桃<small>(英特尔亚太研发中心)</small></p>
               </div>
-              <div class="col-lg-3"><a href="/blog/内部留念/"><img src="img/member.jpg" alt="members" class="img-fluid img-thumbnail d-block mx-auto"></a></div>
+              <div class="col-lg-3"><a href="/blog/内部留念/"><img src="img/member.jpg" alt="研究组成员合影" loading="lazy" class="img-fluid img-thumbnail d-block mx-auto"></a></div>
             </div>
           </div>
         </div>
       </section>
-      <section>
-        <div class="d-flex h-100 justify-content-center align-items-center mx-3">
-          <div class="container-fluid">
+      <section class="research-section" id="research" aria-labelledby="research-heading">
+        <div class="d-flex h-100 justify-content-center align-items-center">
+          <div class="container section-container">
             <header class="text-center mb-5">
-              <h2 class="lined">代表性研究进展</h2>
+              <h2 class="lined" id="research-heading">代表性研究进展</h2>
             </header>
             <div class="row">
               <div class="col-md-4">
                 <h4 class="lined lined-compact text-center">知识计算</h4>
                 <ul>
-                  <li><a href="/blog/a-constructivist-ontology-relation-learning-method/" target="_blank">A Constructivist Ontology Relation Learning Method. IEEE Transactions on Cybernetics,52(7):6434-6441, DOI:10.1109/TCYB.2021.3138452, JUL 2022.</a></li>
-                  <li><a href="/blog/s2af-an-action-framework-to-self-check-the-understanding-self-consistency-of-largelanguage-models/" target="_blank">S2AF: An Action Framework to Self-check the Understanding Self-consistency of LargeLanguage Models. Neural Networks, 2025: 107365.</a></li>
-                  <li><a href="/blog/constructing-word-context-coupled-space-aligned-with-associative-knowledge-relations-for-interpretable-language-modeling/" target="_blank">Constructing Word-Context-Coupled Space Aligned with Associative Knowledge Relations for Interpretable Language Modeling, Findings of the Association for Computational Linguistics: ACL 2023, pages 8414–8427, July 9-14, 2023.</a></li>
-                  <li><a href="/blog/基于建构主义学习理论的个性化知识推荐算法/" target="_blank">基于建构主义学习理论的个性化知识推荐算法. 计算机研究与发展，55(1):125-138, Jan 2018.</a></li>
+                  <li><a href="/blog/a-constructivist-ontology-relation-learning-method/" target="_blank" rel="noopener noreferrer">A Constructivist Ontology Relation Learning Method. IEEE Transactions on Cybernetics,52(7):6434-6441, DOI:10.1109/TCYB.2021.3138452, JUL 2022.</a></li>
+                  <li><a href="/blog/s2af-an-action-framework-to-self-check-the-understanding-self-consistency-of-largelanguage-models/" target="_blank" rel="noopener noreferrer">S2AF: An Action Framework to Self-check the Understanding Self-consistency of LargeLanguage Models. Neural Networks, 2025: 107365.</a></li>
+                  <li><a href="/blog/constructing-word-context-coupled-space-aligned-with-associative-knowledge-relations-for-interpretable-language-modeling/" target="_blank" rel="noopener noreferrer">Constructing Word-Context-Coupled Space Aligned with Associative Knowledge Relations for Interpretable Language Modeling, Findings of the Association for Computational Linguistics: ACL 2023, pages 8414–8427, July 9-14, 2023.</a></li>
+                  <li><a href="/blog/基于建构主义学习理论的个性化知识推荐算法/" target="_blank" rel="noopener noreferrer">基于建构主义学习理论的个性化知识推荐算法. 计算机研究与发展，55(1):125-138, Jan 2018.</a></li>
                 </ul>
               </div>
               <div class="col-md-4">
                 <h4 class="lined lined-compact text-center">认知学习</h4>
                 <ul>
-                  <li><a href="/blog/an-extended-reinforcement-learning-framework-to-model-cognitive-development-with-enactive-pattern-representation/" target="_blank">An Extended Reinforcement Learning Framework to Model Cognitive Development with Enactive Pattern Representation. IEEE Trans. on Cognitive and Developmental Systems, 10(3):738-750, DOI:10.1109/TCDS.2018.2796940, Sep 2018.</a></li>
-                  <li><a href="/blog/evolutionary-sampling-a-novel-way-of-machine-learning-within-a-probabilistic-framework/" target="_blank">Evolutionary sampling: A novel way of machine learning within a probabilistic framework. Information Sciences. 299:262-282, 2015.</a></li>
-                  <li><a href="/blog/motion-mapping-cognition-a-nondecomposable-primary-process-in-human-vision/" target="_blank">Motion Mapping Cognition: A Nondecomposable Primary Process in Human Vision, arXiv:2402.04275, Feb 2024.</a></li>
-                  <li><a href="/blog/pattern-memory-cannot-be-completely-and-truly-realized-in-deep-neural-networks/" target="_blank">Pattern memory cannot be completely and truly realized in deep neural networks. Scientific Reports, 14(1), p.31649, Dec 2024.</a></li>
+                  <li><a href="/blog/an-extended-reinforcement-learning-framework-to-model-cognitive-development-with-enactive-pattern-representation/" target="_blank" rel="noopener noreferrer">An Extended Reinforcement Learning Framework to Model Cognitive Development with Enactive Pattern Representation. IEEE Trans. on Cognitive and Developmental Systems, 10(3):738-750, DOI:10.1109/TCDS.2018.2796940, Sep 2018.</a></li>
+                  <li><a href="/blog/evolutionary-sampling-a-novel-way-of-machine-learning-within-a-probabilistic-framework/" target="_blank" rel="noopener noreferrer">Evolutionary sampling: A novel way of machine learning within a probabilistic framework. Information Sciences. 299:262-282, 2015.</a></li>
+                  <li><a href="/blog/motion-mapping-cognition-a-nondecomposable-primary-process-in-human-vision/" target="_blank" rel="noopener noreferrer">Motion Mapping Cognition: A Nondecomposable Primary Process in Human Vision, arXiv:2402.04275, Feb 2024.</a></li>
+                  <li><a href="/blog/pattern-memory-cannot-be-completely-and-truly-realized-in-deep-neural-networks/" target="_blank" rel="noopener noreferrer">Pattern memory cannot be completely and truly realized in deep neural networks. Scientific Reports, 14(1), p.31649, Dec 2024.</a></li>
                 </ul>
               </div>
               <div class="col-md-4">
                 <h4 class="lined lined-compact text-center">元宇宙软件系统</h4>
                 <ul>
-                  <li><a href="/blog/space-topology-change-mostly-attracts-human-attention-an-implicit-feedback-vr-driving-system/" target="_blank">Space Topology Change Mostly Attracts Human Attention: An Implicit Feedback VR Driving System, IEEE VR 2023 (abstract/poster paper), pp.853-854, 25-29 March 2023, Shanghai, China.</a></li>
-                  <li><a href="/blog/基于战场环境孪生的迷彩伪装动态效果评估方法/" target="_blank">基于战场环境孪生的迷彩伪装动态效果评估方法. 兵工学报， 45(1):349-362，Jan 2024.</a></li>
-                  <li><a href="/blog/visual-illusion-cognition-dataset-construction-and-recognition-performance-by-deep-neural-networks/" target="_blank">Visual illusion cognition dataset construction and recognition performance by deep neural networks, pp.90-94, CCIS 2022.</a></li>
-                  <li><a href="/blog/a-contracted-container-based-code-component-collaboration-model-with-reusable-but-invisible-right-management/" target="_blank">A contracted container-based code component collaboration model with reusable but invisible right management. Information Processing & Management, 62(3): 104057, 2025.</a></li>
+                  <li><a href="/blog/space-topology-change-mostly-attracts-human-attention-an-implicit-feedback-vr-driving-system/" target="_blank" rel="noopener noreferrer">Space Topology Change Mostly Attracts Human Attention: An Implicit Feedback VR Driving System, IEEE VR 2023 (abstract/poster paper), pp.853-854, 25-29 March 2023, Shanghai, China.</a></li>
+                  <li><a href="/blog/基于战场环境孪生的迷彩伪装动态效果评估方法/" target="_blank" rel="noopener noreferrer">基于战场环境孪生的迷彩伪装动态效果评估方法. 兵工学报， 45(1):349-362，Jan 2024.</a></li>
+                  <li><a href="/blog/visual-illusion-cognition-dataset-construction-and-recognition-performance-by-deep-neural-networks/" target="_blank" rel="noopener noreferrer">Visual illusion cognition dataset construction and recognition performance by deep neural networks, pp.90-94, CCIS 2022.</a></li>
+                  <li><a href="/blog/a-contracted-container-based-code-component-collaboration-model-with-reusable-but-invisible-right-management/" target="_blank" rel="noopener noreferrer">A contracted container-based code component collaboration model with reusable but invisible right management. Information Processing & Management, 62(3): 104057, 2025.</a></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="bg-gray">
+      <section class="bg-gray contact-section" id="contact" aria-labelledby="contact-heading">
         <div class="d-flex h-100 align-items-center">
           <div class="container">
             <header class="text-center mb-5">
-              <h2 class="text-uppercase lined">联系我们</h2>
+              <h2 class="lined" id="contact-heading">联系我们</h2>
             </header>
             <div class="row">
               <div class="col-lg-6">
                 <p>研究组地址：江苏省无锡市滨湖区蠡湖大道1800号 江南大学人工智能与计算机学院B410实验室</p>
                 <p>研究组Github主页：<a href="https://github.com/kcisgroup">https://github.com/kcisgroup</a></p>
                 <p>研究组面向全球高校招收优秀硕士、博士研究生，具体招生情况请咨询：</p>
-                <p><a href="https://ai.jiangnan.edu.cn/info/1013/1511.htm">谢振平<small>(教授，博导)</small></a>：<a href="mailto:xiezp@jiangnan.edu.cn">xiezp@jiangnan.edu.cn</a></p>
-                <p><a href="https://ai.jiangnan.edu.cn/info/1081/2945.htm">朱航宇<small>(讲师)</small></a>：<a href="mailto:hangyu.zhu@jiangnan.edu.cn">hangyu.zhu@jiangnan.edu.cn</a></p>
+                <p><a href="https://ai.jiangnan.edu.cn/info/1008/2057.htm">谢振平<small>(教授，博导)</small></a>：<a href="mailto:xiezp@jiangnan.edu.cn">xiezp@jiangnan.edu.cn</a></p>
+                <p><a href="https://ai.jiangnan.edu.cn/info/1009/2492.htm">朱航宇<small>(副教授)</small></a>：<a href="mailto:hangyu.zhu@jiangnan.edu.cn">hangyu.zhu@jiangnan.edu.cn</a></p>
               </div>
-              <div class="col-lg-4 container text-center">
+              <div class="col-lg-5 text-center contact-affiliation">
                 <p>本研究组属于人机融合软件与媒体技术</p>
                 <p>江苏省高校重点实验室</p>
-                <img src="img/qrcode.jpg" alt="qrcode" style="width: 70%" />
+                <img src="img/qrcode.jpg" alt="研究组二维码" class="contact-qrcode" loading="lazy" />
               </div>
-            </div>
-          </div>
-          <div class="fixed-counter text-right small">
-            <div class="d-block d-lg-none">
-              <p class="font-italic text-gray">&copy;2019-2025 KC&IS Group（拾伍志小队）</p>
-            </div>
-            <div>
-              <img src="img/police_registration.jpg" alt="police_registration" width="15px" />
-              <a href="https://beian.mps.gov.cn/" rel="noreferrer" target="_blank">苏公网安备32060102320737</a >
-              <a href="https://beian.miit.gov.cn/" target="_blank">苏ICP备2024132351号-1</a>
-            </div>
-            <div>
-              访问计数：
-              <a href="https://www.hitwebcounter.com" target="_blank">
-                <img src="https://hitwebcounter.com/counter/counter.php?page=16559920&style=0005&nbdigits=5&type=page&initCount=0" loading="lazy" alt="网站计数器" />
-              </a>
             </div>
           </div>
         </div>
       </section>
-      <footer class="mb-3 ml-2 fixed-bottom d-none d-lg-block">
-        <div class="row">
-          <div class="col-lg-6 text-center text-lg-left">
-            <p class="font-italic text-gray">&copy;2019-2025 Knowledge Computing & Intelligent Software Group（拾伍志小队）</p>
-          </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="copyright">&copy;2019-2025 KC&IS Group（拾伍志小队）</p>
+        <div class="footer-details">
+          <a href="https://beian.mps.gov.cn/" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer"><img src="img/police_registration.jpg" alt="" width="15" height="15"> 苏公网安备32060102320737</a>
+          <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">苏ICP备2024132351号-1</a>
+          <span class="visit-counter">访问计数：<a href="https://www.hitwebcounter.com" target="_blank" rel="noopener noreferrer"><img src="https://hitwebcounter.com/counter/counter.php?page=16559920&style=0005&nbdigits=5&type=page&initCount=0" loading="lazy" alt="网站计数器"></a></span>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/onepage-scroll/jquery.onepage-scroll.min.js"></script>
     <script src="vendor/lightbox2/js/lightbox.min.js"></script>
     <script src="js/front.js"></script>
     <script src="js/easter_egg.js"></script>

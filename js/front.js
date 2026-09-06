@@ -1,33 +1,133 @@
-$(document).ready(function(){
-    $("#title").animate({
-        opacity: '1.0',
-        left: '20px',
-        top: '20px'
-    }, 1500);
-});
+document.addEventListener('DOMContentLoaded', function () {
+    if (window.lightbox) {
+        window.lightbox.option({ resizeDuration: 200 });
+    }
 
-$(function () {
-    $(".main").onepage_scroll({
-        sectionContainer: "section", // sectionContainer accepts any kind of selector in case you don't want to use section
-        easing: "ease", // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
-        // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
-        animationTime: 1000, // AnimationTime let you define how long each section takes to animate
-        pagination: true, // You can either show or hide the pagination. Toggle true for show, false for hide.
-        updateURL: false, // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-        beforeMove: function (index) {
-        }, // This option accepts a callback function. The function will be called before the page moves.
-        afterMove: function (index) {
-        }, // This option accepts a callback function. The function will be called after the page moves.
-        loop: false, // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
-        keyboard: true, // You can activate the keyboard controls
-        responsiveFallback: 1000, // You can fall back to normal page scroll by defining the width of the browser in which
-        // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
-        // the browser's width is less than 600, the fallback will kick in.
-        direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const video = document.querySelector('.hero-bg-video');
+    if (video) {
+        const applyMotionPreference = function () {
+            if (reducedMotion.matches) {
+                video.pause();
+            } else {
+                video.play().catch(function () {
+                    // Keep the black backdrop if autoplay is unavailable.
+                });
+            }
+        };
+        reducedMotion.addEventListener('change', applyMotionPreference);
+        applyMotionPreference();
+    }
+
+    const header = document.querySelector('.site-header');
+    const content = document.getElementById('philosophy');
+    const enterLink = document.querySelector('.scroll-btn');
+    if (!header || !content || !enterLink) return;
+
+    const measureHeader = function () {
+        document.documentElement.style.setProperty('--site-header-height', header.offsetHeight + 'px');
+    };
+    measureHeader();
+    if (window.ResizeObserver) {
+        new ResizeObserver(measureHeader).observe(header);
+    } else {
+        window.addEventListener('resize', measureHeader);
+    }
+
+    let entering = false;
+    let wheelDistance = 0;
+    let lastWheelTime = 0;
+    let touchStart = null;
+    const atOpening = function () { return window.scrollY <= 2; };
+    const contentTop = function () {
+        const position = window.getComputedStyle(header).position;
+        const offset = position === 'sticky' || position === 'fixed' ? header.offsetHeight : 0;
+        return content.getBoundingClientRect().top + window.scrollY - offset;
+    };
+
+    // Only the opening-to-content transition is controlled; the document stays native.
+    const enterContent = function (moveFocus) {
+        if (entering) return;
+        entering = true;
+        wheelDistance = 0;
+        const startY = window.scrollY;
+        const startTime = performance.now();
+        const duration = reducedMotion.matches ? 0 : 650;
+        const step = function (now) {
+            const progress = duration ? Math.min((now - startTime) / duration, 1) : 1;
+            const eased = 1 - Math.pow(1 - progress, 3);
+            window.scrollTo({ top: startY + (contentTop() - startY) * eased, behavior: 'instant' });
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            } else {
+                entering = false;
+                if (moveFocus) content.focus({ preventScroll: true });
+            }
+        };
+        window.requestAnimationFrame(step);
+    };
+
+    enterLink.addEventListener('click', function (event) {
+        // Modified clicks retain the anchor's normal browser behavior.
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        enterContent(true);
     });
 
+    window.addEventListener('wheel', function (event) {
+        if (event.ctrlKey || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
+        if (entering) {
+            event.preventDefault();
+            return;
+        }
+        if (!atOpening() || event.deltaY <= 0) {
+            wheelDistance = 0;
+            return;
+        }
+        event.preventDefault();
+        const now = performance.now();
+        if (now - lastWheelTime > 180) wheelDistance = 0;
+        lastWheelTime = now;
+        const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1;
+        wheelDistance += event.deltaY * unit;
+        if (wheelDistance >= 24) enterContent(false);
+    }, { passive: false });
 
-    lightbox.option({
-       'resizeDuration': 200
+    window.addEventListener('touchstart', function (event) {
+        touchStart = atOpening() && event.touches.length === 1
+            ? { x: event.touches[0].clientX, y: event.touches[0].clientY }
+            : null;
+    }, { passive: true });
+    window.addEventListener('touchmove', function (event) {
+        if (event.touches.length !== 1) {
+            touchStart = null;
+            return;
+        }
+        if (entering) {
+            event.preventDefault();
+            return;
+        }
+        if (!touchStart || !atOpening()) return;
+        const dx = touchStart.x - event.touches[0].clientX;
+        const dy = touchStart.y - event.touches[0].clientY;
+        if (dy <= 0 || Math.abs(dx) > Math.abs(dy)) return;
+        event.preventDefault();
+        if (dy >= 40) {
+            touchStart = null;
+            enterContent(false);
+        }
+    }, { passive: false });
+    const resetTouch = function () { touchStart = null; };
+    window.addEventListener('touchend', resetTouch, { passive: true });
+    window.addEventListener('touchcancel', resetTouch, { passive: true });
+
+    window.addEventListener('keydown', function (event) {
+        if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return;
+        if (event.target.closest('a, button, input, textarea, select, [contenteditable]')) return;
+        if (!['ArrowDown', 'PageDown', ' '].includes(event.key)) return;
+        if (entering || atOpening()) {
+            event.preventDefault();
+            enterContent(true);
+        }
     });
 });

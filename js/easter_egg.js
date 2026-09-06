@@ -1,28 +1,20 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const popups = document.querySelectorAll('.popup');
-    const screenHeight = window.innerHeight;
-    const minSpacing = 150; // Minimum spacing between popups
-    const minYPosition = 100; // Minimum distance from the top of the page
+document.addEventListener('DOMContentLoaded', function () {
+    const popup = document.getElementById('welcomePopup');
+    if (!popup) return;
 
-    let usedPositions = [];
-
-    popups.forEach((popup, index) => {
-        let randomY, tryCount = 0;
-        do {
-            randomY = minYPosition + Math.random() * (screenHeight - popup.offsetHeight - minYPosition);
-            tryCount++;
-        } while (usedPositions.some(pos => Math.abs(pos - randomY) < minSpacing) && tryCount < 100);
-
-        usedPositions.push(randomY);
-        popup.style.top = `${randomY}px`; // Randomize Y position with spacing
-        popup.style.left = '-100%'; // Start off-screen to the left
-        popup.style.animation = `slideIn 30s linear ${index * 2}s infinite`; // Adjust duration and add delay
-    });
-
-    const closeButtons = document.querySelectorAll('.closePopup');
-    closeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            button.parentElement.style.display = 'none';
-        });
+    const storageKey = 'kcis-welcome-dismissed';
+    try {
+        if (sessionStorage.getItem(storageKey) === 'true') return;
+    } catch (error) {
+        // The dismiss control also works when browser storage is unavailable.
+    }
+    popup.hidden = false;
+    popup.querySelector('.closePopup').addEventListener('click', function () {
+        popup.hidden = true;
+        try {
+            sessionStorage.setItem(storageKey, 'true');
+        } catch (error) {
+            // Dismissal is still effective for the current page.
+        }
     });
 });
