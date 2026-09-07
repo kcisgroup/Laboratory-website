@@ -3,23 +3,46 @@ document.addEventListener('DOMContentLoaded', function () {
         window.lightbox.option({ resizeDuration: 200 });
     }
 
-    const affiliationDomains = {
-        '哔哩哔哩': 'bilibili.com',
-        '苏州农商行': 'szrcb.com',
-        '摩尔线程': 'mthreads.com',
-        '智慧芽': 'patsnap.com',
-        '科锐国际': 'careerintlinc.com',
-        '极智嘉': 'geekplus.com',
-        '米哈游': 'mihoyo.com',
-        'Monash University': 'monash.edu',
-        '江苏银行': 'jsbchina.cn',
-        '博世中国': 'bosch.com.cn',
-        '汉口银行': 'hkbchina.com',
-        '华为云计算': 'huaweicloud.com',
-        '沃太新能源': 'alphaess.com',
-        '英特尔亚太研发中心': 'intel.cn'
+    const affiliationLogos = {
+        '无锡力捷丰科技有限公司': 'opteeq.com.png',
+        '上海烟草': 'china-tobacco.png',
+        '博世': 'bosch.com.cn.ico',
+        '绿联科技股份有限公司': 'ugreen.com.png',
+        '中国工商银行': 'icbc.com.cn.png',
+        '哔哩哔哩': 'bilibili.com.ico',
+        '苏州农商行': 'szrcb.com.ico',
+        '摩尔线程': 'mthreads.com.ico',
+        '中国联通': 'chinaunicom.com.cn.png',
+        '无锡超通智能制造': 'chiaot.com.png',
+        '朗新科技': 'longshine.com.png',
+        '梦创双杨': 'dreamdt.cn.png',
+        '中国移动': '10086.cn.png',
+        '河南中烟': 'china-tobacco.png',
+        '智慧芽': 'patsnap.com.ico',
+        '科锐国际': 'careerintlinc.com.ico',
+        '极智嘉': 'geekplus.com.ico',
+        '苏州城市学院': 'szcu.edu.cn.png',
+        '华润上华': 'crmicro.com.png',
+        '米哈游': 'mihoyo.com.ico',
+        'Monash University': 'monash.edu.ico',
+        '追觅科技': 'dreame.tech.png',
+        '江苏银行': 'jsbchina.cn.ico',
+        '度小满': 'duxiaoman.com.png',
+        '信通院': 'caict.ac.cn.png',
+        '南瑞集团': 'narigroup.com.png',
+        '汉口银行': 'hkbchina.com.png',
+        '远景': 'envision-group.com.png',
+        '临沂市中心医院': 'lyszxyy.com.cn.png',
+        '扬州卫健委': 'government.png',
+        '华为云计算': 'huaweicloud.com.ico',
+        '中国重汽': 'sinotruk.com.png',
+        '无锡先研院': 'wiat.png',
+        '安徽经济信息中心': 'government.png',
+        '沃太新能源': 'alphaess.com.ico',
+        '中国电信': 'chinatelecom.com.cn.png',
+        '英特尔亚太研发中心': 'intel.cn.ico'
     };
-    const affiliationNames = Object.keys(affiliationDomains).sort(function (first, second) {
+    const affiliationNames = Object.keys(affiliationLogos).sort(function (first, second) {
         return second.length - first.length;
     });
     document.querySelectorAll('#team small').forEach(function (detail) {
@@ -33,9 +56,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const logo = document.createElement('img');
         affiliation.className = 'affiliation';
         logo.className = 'affiliation-logo';
-        logo.src = 'img/affiliations/' + affiliationDomains[match] + '.ico';
+        logo.src = 'img/affiliations/' + affiliationLogos[match];
         logo.alt = '';
-        logo.width = 18;
         logo.height = 18;
         logo.loading = 'lazy';
         logo.addEventListener('error', function () { logo.hidden = true; });
