@@ -96,6 +96,57 @@ document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('resize', measureHeader);
     }
 
+    const thoughtLayout = document.querySelector('.thought-layout');
+    const chapters = Array.from(document.querySelectorAll('.thought-card'));
+    const chapterLinks = Array.from(document.querySelectorAll('.thought-nav a'));
+    if (thoughtLayout && chapters.length && chapterLinks.length === chapters.length) {
+        const currentNumber = document.querySelector('.thought-current');
+        const progressBar = document.querySelector('.thought-progress > span');
+        let activeChapter = -1;
+        let framePending = false;
+        const updateChapter = function () {
+            framePending = false;
+            // Choose the chapter nearest the center of the available viewport.
+            const headerHeight = ['sticky', 'fixed'].includes(window.getComputedStyle(header).position)
+                ? header.offsetHeight : 0;
+            const focusLine = headerHeight + (window.innerHeight - headerHeight) * .5;
+            let closest = 0;
+            let distance = Infinity;
+            chapters.forEach(function (chapter, index) {
+                const rect = chapter.getBoundingClientRect();
+                const chapterDistance = Math.abs(rect.top + rect.height / 2 - focusLine);
+                if (chapterDistance < distance) {
+                    closest = index;
+                    distance = chapterDistance;
+                }
+            });
+            if (closest === activeChapter) return;
+            activeChapter = closest;
+            chapters.forEach(function (chapter, index) {
+                chapter.classList.toggle('is-active', index === closest);
+                if (index === closest) {
+                    chapterLinks[index].setAttribute('aria-current', 'location');
+                } else {
+                    chapterLinks[index].removeAttribute('aria-current');
+                }
+            });
+            if (currentNumber) currentNumber.textContent = String(closest + 1).padStart(2, '0');
+            if (progressBar) progressBar.style.width = ((closest + 1) / chapters.length * 100) + '%';
+        };
+        const scheduleChapterUpdate = function () {
+            if (framePending) return;
+            framePending = true;
+            window.requestAnimationFrame(updateChapter);
+        };
+        updateChapter();
+        thoughtLayout.classList.add('is-enhanced');
+        window.addEventListener('scroll', scheduleChapterUpdate, { passive: true });
+        window.addEventListener('resize', scheduleChapterUpdate);
+        if (window.ResizeObserver) {
+            new ResizeObserver(scheduleChapterUpdate).observe(thoughtLayout);
+        }
+    }
+
     let entering = false;
     let wheelDistance = 0;
     let lastWheelTime = 0;
